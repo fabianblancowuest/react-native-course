@@ -1,6 +1,6 @@
 import useCounter from "../hooks/useCounter";
 
-const CounterWithHook = () => {
+export const CounterWithHook = () => {
 	const { count, setCounter, reset } = useCounter({});
 
 	return (
@@ -31,5 +31,3 @@ const CounterWithHook = () => {
 		</>
 	);
 };
-
-export default CounterWithHook;

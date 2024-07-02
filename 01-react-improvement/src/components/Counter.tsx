@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Counter = () => {
+export const Counter = () => {
 	const [count, setCount] = useState<number>(10);
 
 	const add = (value: number) => {
@@ -43,5 +43,3 @@ const Counter = () => {
 		</>
 	);
 };
-
-export default Counter;
