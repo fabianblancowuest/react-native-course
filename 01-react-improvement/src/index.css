@@ -117,3 +117,30 @@ input {
 	gap: 2rem;
 	padding: 2em;
 }
+
+/* Form */
+
+form {
+	text-align: center;
+}
+
+form div {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.formInput {
+	display: block;
+	width: 300px;
+	padding: 0.5em;
+}
+
+.btn-form {
+	display: block;
+	margin: 0 auto;
+}
+
+.btn-form:hover {
+	background-color: rgb(46, 46, 46);
+}
