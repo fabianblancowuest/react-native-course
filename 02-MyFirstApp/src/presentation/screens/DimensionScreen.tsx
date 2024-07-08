@@ -12,7 +12,7 @@ export const DimensionScreen = () => {
         <View
           style={{
             ...styles.purpleBox,
-            width: width * 0.6,
+            width: width * 0.5,
           }}></View>
       </View>
 
