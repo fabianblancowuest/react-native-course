@@ -4,12 +4,13 @@ export const globalStyles = StyleSheet.create({
     centerContainer: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center" 
+        alignItems: "center", 
+        backgroundColor: "#051937",
     },
     title: {
         fontSize: 80,
-        fontWeight: "300",
-        color: "black"
+        fontWeight: "500",
+        color: "white"
     },
     fab: {
         position: 'absolute',
