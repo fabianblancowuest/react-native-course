@@ -8,6 +8,14 @@ export const FlexDirectionScreen = () => {
       <View style={[styles.box, styles.box2]} />
       <View style={[styles.box, styles.box3]} />
       <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
       {/* </ScrollView> */}
     </View>
   );
@@ -17,9 +25,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#39d4d4',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     alignItems: 'stretch',
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   box: {
     // flex: 1,
@@ -32,7 +41,7 @@ const styles = StyleSheet.create({
   },
   box2: {
     backgroundColor: '#4240a2',
-    alignSelf: 'flex-end',
+    // alignSelf: 'flex-end',
   },
   box3: {
     // top: 100,
