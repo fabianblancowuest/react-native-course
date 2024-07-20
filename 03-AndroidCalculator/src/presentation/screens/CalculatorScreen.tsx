@@ -5,8 +5,18 @@ import {useCalculator} from '../hooks/useCalculator';
 
 export const CalculatorScreen = () => {
   //
-  const {number, buildNumber, clean, deleteOperation, toggleSign} =
-    useCalculator();
+  const {
+    number,
+    prevNumber,
+    buildNumber,
+    clean,
+    deleteOperation,
+    toggleSign,
+    divideOperation,
+    multiplyOperation,
+    addOperation,
+    substractOperation,
+  } = useCalculator();
 
   return (
     <View style={globalStyles.calculatorContainer}>
@@ -17,7 +27,12 @@ export const CalculatorScreen = () => {
           style={globalStyles.mainResult}>
           {number}
         </Text>
-        <Text style={globalStyles.subResult}>15</Text>
+        <Text
+          adjustsFontSizeToFit
+          numberOfLines={1}
+          style={globalStyles.subResult}>
+          {prevNumber === '0' ? '' : prevNumber}
+        </Text>
       </View>
 
       <View style={globalStyles.row}>
@@ -40,7 +55,7 @@ export const CalculatorScreen = () => {
           color={colors.lightGray}
         />
         <CalculatorButton
-          onPress={() => console.log('÷')}
+          onPress={divideOperation}
           label="÷"
           color={colors.orange}
         />
@@ -62,8 +77,8 @@ export const CalculatorScreen = () => {
           color={colors.darkGray}
         />
         <CalculatorButton
-          onPress={() => console.log('X')}
-          label="X"
+          onPress={multiplyOperation}
+          label="x"
           color={colors.orange}
         />
       </View>
@@ -84,7 +99,7 @@ export const CalculatorScreen = () => {
           color={colors.darkGray}
         />
         <CalculatorButton
-          onPress={() => console.log('-')}
+          onPress={substractOperation}
           label="-"
           color={colors.orange}
         />
@@ -106,7 +121,7 @@ export const CalculatorScreen = () => {
           color={colors.darkGray}
         />
         <CalculatorButton
-          onPress={() => console.log('+')}
+          onPress={addOperation}
           label="+"
           color={colors.orange}
         />
