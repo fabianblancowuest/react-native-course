@@ -2,12 +2,14 @@ import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import {colors, globalStyles} from '../../config/theme/app-theme';
 import {CalculatorButton} from '../components/CalculatorButton';
+import {useCalculator} from '../hooks/useCalculator';
 
 export const CalculatorScreen = () => {
+  const {number} = useCalculator();
   return (
     <View style={globalStyles.calculatorContainer}>
       <View style={{paddingHorizontal: 30, paddingBottom: 20}}>
-        <Text style={globalStyles.mainResult}>1500</Text>
+        <Text style={globalStyles.mainResult}>{number}</Text>
         <Text style={globalStyles.subResult}>15</Text>
       </View>
 
