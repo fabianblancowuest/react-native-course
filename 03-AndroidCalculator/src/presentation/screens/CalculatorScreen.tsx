@@ -1,11 +1,13 @@
-import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import {colors, globalStyles} from '../../config/theme/app-theme';
 import {CalculatorButton} from '../components/CalculatorButton';
 import {useCalculator} from '../hooks/useCalculator';
 
 export const CalculatorScreen = () => {
-  const {number, buildNumber} = useCalculator();
+  //
+  const {number, buildNumber, clean, deleteOperation, toggleSign} =
+    useCalculator();
+
   return (
     <View style={globalStyles.calculatorContainer}>
       <View style={{paddingHorizontal: 30, paddingBottom: 20}}>
@@ -20,19 +22,19 @@ export const CalculatorScreen = () => {
 
       <View style={globalStyles.row}>
         <CalculatorButton
-          onPress={() => console.log('C')}
+          onPress={clean}
           label="C"
           blackText
           color={colors.lightGray}
         />
         <CalculatorButton
-          onPress={() => console.log('+/-')}
+          onPress={toggleSign}
           label="+/-"
           blackText
           color={colors.lightGray}
         />
         <CalculatorButton
-          onPress={() => console.log('del')}
+          onPress={deleteOperation}
           label="del"
           blackText
           color={colors.lightGray}
