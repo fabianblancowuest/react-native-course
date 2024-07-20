@@ -10,12 +10,14 @@ export const useCalculator = () => {
 
   // Borra último número
   const deleteOperation = () => {
-    if (number.length) {
-      setNumber('0');
-    }
+    setNumber('0');
 
     if (number.length > 1) {
       setNumber(number.substring(0, number.length - 1));
+    }
+
+    if (number.length <= 2 && number.includes('-')) {
+      setNumber('0');
     }
   };
 
