@@ -5,6 +5,12 @@ export const useCalculator = () => {
 
   const buildNumber = (numberString: string) => {
     if (number.includes('.') && numberString === '.') return;
+
+    if (number.startsWith('0') || number.startsWith('-0')) {
+      if (numberString === '.') {
+        return setNumber(number + numberString);
+      }
+    }
     setNumber(number + numberString);
   };
   return {
