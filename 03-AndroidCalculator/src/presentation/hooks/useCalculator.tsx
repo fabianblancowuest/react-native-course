@@ -12,16 +12,22 @@ export const useCalculator = () => {
   const [number, setNumber] = useState('0');
   const [prevNumber, setPrevNumber] = useState('0');
 
-  const lastOperation = useRef<Operator>;
+  const lastOperation = useRef<Operator | undefined>(undefined);
 
   useEffect(() => {
     if (lastOperation.current) {
-      const firstFormulaPart = formula.split(' ').at(0);
+      const firstFormulaPart = formula.split(' ')[0];
       setFormula(`${firstFormulaPart} ${lastOperation.current} ${number}`);
     } else {
       setFormula(number);
     }
   }, [number]);
+
+  useEffect(() => {
+    const subResult = calculateSubResult();
+
+    setPrevNumber(`${subResult}`);
+  }, [formula]);
 
   // Borrar todo
   const clean = () => {
@@ -44,6 +50,7 @@ export const useCalculator = () => {
     }
   };
 
+  // Quitar signo negativo
   const toggleSign = () => {
     if (number.includes('-')) {
       return setNumber(number.replace('-', ''));
@@ -82,6 +89,8 @@ export const useCalculator = () => {
   };
 
   const setLastNumber = () => {
+    calculateResult();
+
     if (number.endsWith('.')) {
       setPrevNumber(number.slice(0, -1));
     } else {
@@ -91,6 +100,7 @@ export const useCalculator = () => {
     setNumber('0');
   };
 
+  // Operaciones aritméticas
   const divideOperation = () => {
     setLastNumber();
     lastOperation.current = Operator.divide;
@@ -108,13 +118,14 @@ export const useCalculator = () => {
     lastOperation.current = Operator.substract;
   };
 
-  const calculteResult = () => {
+  // Función que se ejecuta presionando la tecla =
+  const calculateResult = () => {
     const result = calculateSubResult();
 
     setFormula(`${result}`);
 
     lastOperation.current = undefined;
-    setPrevNumber('0');
+    setPrevNumber(calculateSubResult().toString());
   };
 
   const calculateSubResult = (): number => {
@@ -125,7 +136,7 @@ export const useCalculator = () => {
 
     if (isNaN(num2)) return num1;
 
-    switch (lastOperation.current) {
+    switch (operation) {
       case Operator.add:
         return num1 + num2;
 
@@ -140,6 +151,7 @@ export const useCalculator = () => {
         throw new Error('Operation not implemented');
     }
   };
+
   return {
     // Properties
     number,
@@ -155,6 +167,6 @@ export const useCalculator = () => {
     multiplyOperation,
     addOperation,
     substractOperation,
-    calculteResult,
+    calculateResult,
   };
 };

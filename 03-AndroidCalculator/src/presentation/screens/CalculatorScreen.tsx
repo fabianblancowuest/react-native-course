@@ -17,7 +17,7 @@ export const CalculatorScreen = () => {
     multiplyOperation,
     addOperation,
     substractOperation,
-    calculteResult,
+    calculateResult,
   } = useCalculator();
 
   return (
@@ -29,12 +29,17 @@ export const CalculatorScreen = () => {
           style={globalStyles.mainResult}>
           {formula}
         </Text>
-        <Text
-          adjustsFontSizeToFit
-          numberOfLines={1}
-          style={globalStyles.subResult}>
-          {prevNumber === '0' ? '' : prevNumber}
-        </Text>
+
+        {formula === prevNumber ? (
+          <Text style={globalStyles.subResult}></Text>
+        ) : (
+          <Text
+            adjustsFontSizeToFit
+            numberOfLines={1}
+            style={globalStyles.subResult}>
+            {prevNumber}
+          </Text>
+        )}
       </View>
 
       <View style={globalStyles.row}>
@@ -141,7 +146,7 @@ export const CalculatorScreen = () => {
           color={colors.darkGray}
         />
         <CalculatorButton
-          onPress={calculteResult}
+          onPress={calculateResult}
           label="="
           color={colors.orange}
         />
