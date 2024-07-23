@@ -94,6 +94,35 @@ export const useCalculator = () => {
     setLastNumber();
     lastOperation.current = Operator.substract;
   };
+
+  const calculteResult = () => {
+    const num1 = Number(number);
+    const num2 = Number(prevNumber);
+
+    switch (lastOperation.current) {
+      case Operator.add:
+        setNumber(`${num1 + num2}`);
+
+        break;
+      case Operator.substract:
+        setNumber(`${num2 - num1}`);
+
+        break;
+      case Operator.multiply:
+        setNumber(`${num1 * num2}`);
+
+        break;
+      case Operator.divide:
+        setNumber(`${num2 / num1}`);
+
+        break;
+
+      default:
+        throw new Error('Operation not implemented');
+    }
+
+    setPrevNumber('0');
+  };
   return {
     // Properties
     number,
@@ -108,5 +137,6 @@ export const useCalculator = () => {
     multiplyOperation,
     addOperation,
     substractOperation,
+    calculteResult,
   };
 };
