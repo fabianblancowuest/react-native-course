@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface AndroidCalculatorTests : XCTestCase
+@interface NavigationAppTests : XCTestCase
 
 @end
 
-@implementation AndroidCalculatorTests
+@implementation NavigationAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

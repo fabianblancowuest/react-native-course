@@ -14,7 +14,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'AndroidCalculator' do
+target 'NavigationApp' do
   config = use_native_modules!
 
   use_react_native!(
@@ -23,7 +23,7 @@ target 'AndroidCalculator' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'AndroidCalculatorTests' do
+  target 'NavigationAppTests' do
     inherit! :complete
     # Pods for testing
   end

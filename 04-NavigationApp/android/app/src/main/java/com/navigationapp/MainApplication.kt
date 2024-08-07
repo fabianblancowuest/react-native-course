@@ -1,4 +1,4 @@
-package com.androidcalculator
+package com.navigationapp
 
 import android.app.Application
 import com.facebook.react.PackageList

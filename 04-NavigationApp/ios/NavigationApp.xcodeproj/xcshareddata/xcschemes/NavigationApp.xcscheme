@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "AndroidCalculator.app"
-               BlueprintName = "AndroidCalculator"
-               ReferencedContainer = "container:AndroidCalculator.xcodeproj">
+               BuildableName = "NavigationApp.app"
+               BlueprintName = "NavigationApp"
+               ReferencedContainer = "container:NavigationApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AndroidCalculatorTests.xctest"
-               BlueprintName = "AndroidCalculatorTests"
-               ReferencedContainer = "container:AndroidCalculator.xcodeproj">
+               BuildableName = "NavigationAppTests.xctest"
+               BlueprintName = "NavigationAppTests"
+               ReferencedContainer = "container:NavigationApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AndroidCalculator.app"
-            BlueprintName = "AndroidCalculator"
-            ReferencedContainer = "container:AndroidCalculator.xcodeproj">
+            BuildableName = "NavigationApp.app"
+            BlueprintName = "NavigationApp"
+            ReferencedContainer = "container:NavigationApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AndroidCalculator.app"
-            BlueprintName = "AndroidCalculator"
-            ReferencedContainer = "container:AndroidCalculator.xcodeproj">
+            BuildableName = "NavigationApp.app"
+            BlueprintName = "NavigationApp"
+            ReferencedContainer = "container:NavigationApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
